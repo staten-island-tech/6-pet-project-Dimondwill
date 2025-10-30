@@ -13,7 +13,9 @@ class Torotaneseyute:
         elif self.money == price:
             self.inventory.append(item)
             self.money -= price
-            print(f"Wagwan Croski")
+            print(f"Wagwan Croski you had ")
 
-Drake = Torotaneseyute(100, [])
-Drake = 
+
+Drake = Torotaneseyute("Drake", 100, [])
+Drake.buy(50, "microphone")
+Drake.buy(50, "microphone")
