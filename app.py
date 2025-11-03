@@ -1,21 +1,51 @@
+import
+microphone = [
+    {
+        "name": "unobtainable mic",
+        "price": 2000000
+    },
+    {
+        "name": "broken mic",
+         "price": 15,
+    },
+    {
+        "name": "cat mic",
+        "price": 20,
+    },
+    {
+        "name": "blue mic",
+        "price": 40,
+    },
+    {
+        "name": "champions mic",
+        "price": 100
+    },
+    {
+        "name": "Drake mic",
+        "price": 500
+
+    }
+]
+
+
+
+
 class Torotaneseyute:
-    def __init__(self, name, money, inventory):
+    def __init__(self, name, fame, happieness, mic, money):
         self.name = name
+        self.fame = int(fame)
+        self.happiness = happieness
+        self.mic = mic
         self.money = money
-        self.inventory = inventory
-    def buy(self, price, item):
-        if self.money > price:
-            self.inventory.append(item)
-            self.money -= price
-            print(f"Wagwan crodie, you just lost ${price} but you still got {self.money} left Croodie")
-        elif self.money < price:
-            print("Ayo top left Croskie gotta get yo bands up fo you get slimed out on Sankofa square fam")
-        elif self.money == price:
-            self.inventory.append(item)
-            self.money -= price
-            print(f"Wagwan Croski you had ")
 
+    def shop(self):
+        buy = input("you wanna buy a better mic: ")
+        if buy == "yes":
+            input("pick a mic 1 through 5")
+        
 
-Drake = Torotaneseyute("Drake", 100, [])
-Drake.buy(50, "microphone")
-Drake.buy(50, "microphone")
+    def sing(self):
+        print("you tryna put on a performance")
+        perform = input("y/n: ")
+        if "y" in perform:
+            if 
