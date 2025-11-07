@@ -3,38 +3,39 @@ microphone = [
     {
         "name": "unobtainable mic",
         "price": 2000000,
-        "money": random.randint(1, 9999999),
-        "happiness": random.randint(2, 100) ,
+        "money": 9999999,
+        "happiness": 100,
     },
     {
         "name": "broken mic",
         "price": 15,
-        "money": random.randint(1, 5),
-        "happiness": random.randint(1, 5) ,
+        "money": 3,
+        "happiness": 3 ,
     },
     {
         "name": "cat mic",
         "price": 20,
-        "money": random.randint(1, 10),
-        "happieness": random.randint(2, 6) ,
+        "money": 7,
+        "happiness": 7 ,
     },
     {
         "name": "blue mic",
         "price": 40,
-        "money": random.randint(1, 15),
-        "happiness": random.randint(5, 15),
+        "money": 10,
+        "happiness": 12,
     },
     {
         "name": "champions mic",
         "price": 100,
-        "money": random.randint(2, 20),
-        "happiness": random.randint(10, 25),
+        "money": 75,
+        "happiness": 25,
     },
     {
         "name": "Drake mic",
         "price": 500,
-        "money": random.randint(100, 10000000),
-        "happiness": random.randint(15, 50),
+        "money": 67067,
+        "happiness": 40,
+
     }
 ]
 
@@ -51,20 +52,22 @@ class Torotaneseyute:
         self.playing = playing
     def shop(self):
         while self.playing == "y":
-            buy = input("you wanna buy a better mic: ")
-            if buy == "yes":
+            buy = input("you wanna buy a better mic y/n: ")
+            if buy.lower() == "y":
                 mica = int(input("pick a mic 1 through 5: "))
+            
             if mica < 1 or mica > 5:
                 print("i said a number one through five retry")
-                return     
+                self.playing = "y"
             else:  
                 mics = input(f"you chose the {microphone[mica]["name"]} it costs {microphone[mica]["price"]} do you want it y/n ")
-                if "y" in mics and self.money >= microphone[mica]["price"]:
+                if "y" in mics.lower() and self.money >= microphone[mica]["price"]:
                     stat1 = microphone[mica]["happiness"]
                     stat2 = microphone[mica]["money"]
                     self.money -= microphone[mica]["price"]
                     self.mic = microphone[mica]["name"]
-                    return(self.mic)
+                    print(self.mic)
+    stat2=stas
     
 
 
@@ -72,7 +75,8 @@ class Torotaneseyute:
         print("you tryna put on a performance")
         perform = input("y/n: ")
         if "y" in perform:
-            self.happiness
+            print("put on a show ")
+            self.happiness += stat2
 
 
 Drake = Torotaneseyute("Drake", 0, 0, 1, 100, "y")
