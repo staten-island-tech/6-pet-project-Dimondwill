@@ -42,6 +42,10 @@ microphone = [
 
 
 class Torotaneseyute:
+    stat1 = 1
+    stat2 = 1
+    stat2 = int(stat2)
+    stat1 = int(stat1)
     def __init__(self, name, fame, happieness, mic, money, playing):
         self.name = name
         self.fame = int(fame)
@@ -53,26 +57,28 @@ class Torotaneseyute:
         while self.playing == "y":
             buy = input("you wanna buy a better mic: ")
             if buy == "yes":
-                mica = int(input("pick a mic 1 through 5: "))
-            if mica < 1 or mica > 5:
+                mica = input("pick a mic 1 through 5: ")
+            if not mica.isnumeric():
                 print("i said a number one through five retry")
-                return     
-            else:  
+                continue
+            elif int(mica) < 1 or int(mica) > 5:   
+                print("i said a number one through five retry")
+                continue
+            else:
+                mica = int(mica)
                 mics = input(f"you chose the {microphone[mica]["name"]} it costs {microphone[mica]["price"]} do you want it y/n ")
                 if "y" in mics and self.money >= microphone[mica]["price"]:
-                    stat1 = microphone[mica]["happiness"]
-                    stat2 = microphone[mica]["money"]
+                    self.stat1 = microphone[mica]["happiness"]
+                    self.stat2 = microphone[mica]["money"]
                     self.money -= microphone[mica]["price"]
                     self.mic = microphone[mica]["name"]
                     return(self.mic)
-    
-
-
     def sing(self):
         print("you tryna put on a performance")
         perform = input("y/n: ")
         if "y" in perform:
-            self.happiness
+            self.happiness += self.stat1
+            self.money += self.stat2
 
 
 Drake = Torotaneseyute("Drake", 0, 0, 1, 100, "y")
