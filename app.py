@@ -98,7 +98,7 @@ class Torotaneseyute:
             self.fame += self.stat1
             print(f"you now have ${self.money} and {self.fame} fame, but you now only have {self.happiness} happiness, go to sleep to increase it")
             x = random.randint(1,100)
-            if int(self.happiness) <= 0 and x != 3 or x != 5 or x != 73 or x !55555555555555555555555555555555555555555= 93 or x != 7:
+            if int(self.happiness) <= 0 and x != 3 or x != 5 or x != 73 or x != 93 or x != 7:
                 print("so eiher you got unlucky or negleckted your performer so he died ")
             elif int(self.happiness) <= 0 and x == 3 or x == 5 or x == 73 or x == 93 or x == 7:
                 print(f"{self.name} blew its brains out, you treated it horibly, do better you human piece of trash")
