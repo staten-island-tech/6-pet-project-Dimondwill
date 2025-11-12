@@ -53,16 +53,27 @@ class Torotaneseyute:
     stat2 = int(stat2)
     stat1 = int(stat1)
 
-    def __init__(self, name, fame, happieness, mic, money, playing):
-        self.name = input("whats your name")
+    def __init__(self, fame, happieness, mic, money, playing):
+        self.name = input("whats your name: ")
         self.fame = int(fame)
         self.happiness = happieness
         self.mic = mic
         self.money = money
         self.playing = playing
+        self.life
 
     def life(self):
-        print("so here you could ")
+        print("do you want to 1.) sing 2.) shop 3.) view stats")
+        opt = input("1, 2 or 3: ")
+        if not opt.isnumeric():
+            print("i said put a 1 2 or 3, now were gonna retry this and hope you arnt stupid")
+            self.life
+        if opt == 1:
+            self.sing
+        if opt == 2:
+            self.shop
+        if opt == 3:
+            print(f"you have")
     def shop(self):
         while self.playing == "y":
             buy = input("you wanna buy a better mic: ")
@@ -107,13 +118,12 @@ class Torotaneseyute:
                 print(f"{self.name} blew its brains out, you treated it horibly, do better you human piece of trash")
     
     def sleep(self):
-        knocked = input("so you want to sleep right y/n ")
+        knocked = input("so you want to sleep right y/n: ")
         if knocked == "Y":
             print(f"{self.name} went to sleep")
             self.happiness += self.stat1
 
 
-
-Drake = Torotaneseyute("Drake", 0, 0, 1, 500, "y")
-Drake.life()
-Drake.shop() 
+Drake = Torotaneseyute(0, 100, 1, 0, "y")
+Drake.__init__
+Drake.life
