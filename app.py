@@ -60,23 +60,27 @@ class Torotaneseyute:
         self.mic = mic
         self.money = money
         self.playing = playing
-        self.life
+        self.life()
 
     def life(self):
         print("do you want to 1.) sing 2.) shop 3.) view stats")
         opt = input("1, 2 or 3: ")
         if not opt.isnumeric():
             print("i said put a 1 2 or 3, now were gonna retry this and hope you arnt stupid")
-            self.life
-        if opt == 1:
-            self.sing
-        if opt == 2:
-            self.shop
-        if opt == 3:
-            print(f"you have")
+            self.life()
+        if opt == "1":
+            self.sing()
+        if opt == "2":
+            self.shop()
+        if opt == "3":
+            print(f"you have ${self.money} mic number {self.mic}, {self.fame} fame, and {self.happiness}")
+            self.life()
+        else:
+            print("1 2 or 3")
+            self.life()
     def shop(self):
         while self.playing == "y":
-            buy = input("you wanna buy a better mic: ")
+            buy = input("you wanna buy a better mic, yes or no: ")
             if buy == "yes":
                 mica = input("pick a mic 1 through 5: ")
                 if not mica.isnumeric():
@@ -93,15 +97,25 @@ class Torotaneseyute:
                         self.money -= microphone[mica]["price"]
                         self.mic = microphone[mica]["name"]
                         print(f"you have ${self.money} left")
-                        print(self.mic)
+                        print(f"you now have {self.mic}")
                         self.stat1 = microphone[mica]["happiness"]
                         self.stat2 = microphone[mica]["money"]
+                        self.life()
                     elif self.money < microphone[mica]["price"] and self.fame < microphone[mica]["fame"]:
                         print("gosh gigily darn, you aint got the fame or bread for it, get your bands and clout up you dissapointment")
+                        self.life()
                     elif self.money < microphone[mica]["price"]:
                         print("you do NOT have the money for this, get yo bread up gng")
+                        self.life()
                     elif self.fame < microphone[mica]["fame"]:
                         print("you dont have enough fame for this, get yo clout up gng \U0001F971")
+                        self.life()
+            if buy == "no":
+                print("going back up")
+                self.life()
+            else:
+                print("i said yes or no retry")
+                self.shop()
                 
     def sing(self):
         print("you tryna put on a performance")
@@ -119,9 +133,15 @@ class Torotaneseyute:
     
     def sleep(self):
         knocked = input("so you want to sleep right y/n: ")
-        if knocked == "Y":
+        if knocked.lower() == "y":
             print(f"{self.name} went to sleep")
             self.happiness += self.stat1
+        if knocked.lower() == "n":
+            print("going back up")
+            self.life()
+        else:
+            print("i said y or n try again")
+            self.sleep()
 
 
 Drake = Torotaneseyute(0, 100, 1, 0, "y")
