@@ -93,7 +93,7 @@ class Torotaneseyute:
                     mica = int(mica)
                     mics = input(f"you chose the {microphone[mica]["name"]} it costs {microphone[mica]["price"]} and you need at least {microphone[mica]["fame"]} fame to get it do you want it y/n ")
                     if "y" in mics and self.money >= microphone[mica]["price"] and self.fame >= microphone[mica]["fame"]:
-                        print(f"you just bought the {microphone[mica]["name"]} it makes you arouun ${microphone[mica]["money"]} and {microphone[mica]["happiness"]} fame per play but loses you like {microphone[mica]["happiness"]} happiness per play")
+                        print(f"you just bought the {microphone[mica]["name"]} it makes you around ${microphone[mica]["money"]} and {microphone[mica]["happiness"]} fame per play but loses you like {microphone[mica]["happiness"]} happiness per play")
                         self.money -= microphone[mica]["price"]
                         self.mic = microphone[mica]["name"]
                         print(f"you have ${self.money} left")
@@ -125,11 +125,10 @@ class Torotaneseyute:
             self.money += self.stat2
             self.fame += self.stat1
             print(f"you now have ${self.money} and {self.fame} fame, but you now only have {self.happiness} happiness, go to sleep to increase it")
-            x = random.randint(1,100)
-            if int(self.happiness) <= 0 and x != 3 or x != 5 or x != 73 or x != 93 or x != 7:
+            if int(self.happiness) <= 0 :
                 print("so eiher you got unlucky or negleckted your performer so he died ")
-            elif int(self.happiness) <= 0 and x == 3 or x == 5 or x == 73 or x == 93 or x == 7:
-                print(f"{self.name} blew its brains out, you treated it horibly, do better you human piece of trash")
+            elif int(self.happiness) <= 0:
+                print(f"{self.name} blew its brains out due to severe depression, you treated it horibly, do better you human piece of trash")
     
     def sleep(self):
         knocked = input("so you want to sleep right y/n: ")
