@@ -125,9 +125,10 @@ class Torotaneseyute:
             self.money += self.stat2
             self.fame += self.stat1
             print(f"you now have ${self.money} and {self.fame} fame, but you now only have {self.happiness} happiness, go to sleep to increase it")
-            if int(self.happiness) <= 0 :
+            x = random.randint(1,10)
+            if int(self.happiness) <= 0 and x != 8:
                 print("so eiher you got unlucky or negleckted your performer so he died ")
-            elif int(self.happiness) <= 0:
+            elif int(self.happiness) <= 0 and x == 8:
                 print(f"{self.name} blew its brains out due to severe depression, you treated it horibly, do better you human piece of trash")
     
     def sleep(self):
