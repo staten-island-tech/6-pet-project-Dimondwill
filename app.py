@@ -63,7 +63,7 @@ class Torotaneseyute:
         self.life()
 
     def life(self):
-        print("do you want to 1.) sing 2.) shop 3.) view stats")
+        print("do you want to 1.) sing 2.) shop 3.) view stats 4.) sleep")
         opt = input("1, 2 or 3: ")
         if not opt.isnumeric():
             print("i said put a 1 2 or 3, now were gonna retry this and hope you arnt stupid")
@@ -75,8 +75,10 @@ class Torotaneseyute:
         if opt == "3":
             print(f"you have ${self.money} mic number {self.mic}, {self.fame} fame, and {self.happiness}")
             self.life()
+        if opt == "4":
+            self.sleep
         else:
-            print("1 2 or 3")
+            print("1 2 3 or 4")
             self.life()
     def shop(self):
         while self.playing == "y":
@@ -124,18 +126,22 @@ class Torotaneseyute:
             self.happiness -= self.stat1
             self.money += self.stat2
             self.fame += self.stat1
-            print(f"you now have ${self.money} and {self.fame} fame, but you now only have {self.happiness} happiness, go to sleep to increase it")
+            print(f"you now have ${self.money} and {self.fame} fame, but you now only have {self.happiness} happiness if it goes to 0 you die, go to sleep to increase it")
             x = random.randint(1,10)
             if int(self.happiness) <= 0 and x != 8:
+                self.happiness = 0
                 print("so eiher you got unlucky or negleckted your performer so he died ")
+                print(f"your final stats were: ${self.money}, {self.fame} fame, and 0 happiness")
             elif int(self.happiness) <= 0 and x == 8:
                 print(f"{self.name} blew its brains out due to severe depression, you treated it horibly, do better you human piece of trash")
+                print(f"your final stats were: ${self.money}, {self.fame} fame, and 0 happiness")
     
     def sleep(self):
         knocked = input("so you want to sleep right y/n: ")
         if knocked.lower() == "y":
             print(f"{self.name} went to sleep")
             self.happiness += self.stat1
+            self.life
         if knocked.lower() == "n":
             print("going back up")
             self.life()
